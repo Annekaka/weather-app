@@ -10,32 +10,43 @@
     <div id="container">
       <div id="current-weather">
         <div class="col">
-          <input type="text" id="searchPlace" placeholder="Enter a city" />
-          <button id="search-bt">Search</button>
+          <form>
+            <input type="search" id="searchPlace" placeholder="Enter a city" />
+            <input type="submit" id="submit-btn" placeholder="Submit" />
+          </form>
           <h1 class="current-city">Oslo</h1>
-          <h3 class="current-date">20. august</h3>
+          <h3 class="current-date">Tuesday 20.aug 13:45</h3>
+          <h4>Low 18°C / High 25°C</h4>
         </div>
         <div class="col">
-          <h2 class="current-temp">21°</h2>
+          <h2 class="weather-icon-bg">🌤️</h2>
+          <h2 class="current-temp">
+            21<span class="weather-app-unit">°C</span>
+          </h2>
         </div>
       </div>
       <div id="forcastWeek">
         <ul>
+          <li class="weather-icon-sml">🌤️</li>
           <li class="day next-day">Monday</li>
           <li class="date next-date">21.aug</li>
-          <li class="temp next-temp">21°</li>
+          <li class="temp next-temp">21°C</li>
+          <li class="weather-icon-sml">☁️</li>
           <li class="day 3rd-day">Tuesday</li>
           <li class="date 3rd-date">22.aug</li>
-          <li class="temp 3rd-temp">21°</li>
+          <li class="temp 3rd-temp">18°C</li>
+          <li class="weather-icon-sml">☔️</li>
           <li class="day 4th-day">Wednesday</li>
           <li class="date 4th-date">23.aug</li>
-          <li class="temp 4th-temp">21°</li>
+          <li class="temp 4th-temp">21°C</li>
+          <li class="weather-icon-sml">☀️</li>
           <li class="day 5th-day">Thursday</li>
           <li class="date 5th-date">24.aug</li>
-          <li class="temp 5th-temp">21°</li>
+          <li class="temp 5th-temp">21°C</li>
+          <li class="weather-icon-sml">🌬️</li>
           <li class="day 6th-day">Friday</li>
           <li class="date 6th-date">25.aug</li>
-          <li class="temp 6th-temp">21°</li>
+          <li class="temp 6th-temp">16°C</li>
         </ul>
       </div>
     </div>
