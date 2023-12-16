@@ -5,24 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app</title>
     <link rel="stylesheet" href="src/style.css" type="text/CSS" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div id="container">
       <div id="current-weather">
+        <form id="search-form">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Enter a city..."
+            required
+          />
+          <input type="submit" class="search" value="Submit" />
+        </form>
         <div class="col">
-          <form>
-            <input type="search" id="searchPlace" placeholder="Enter a city" />
-            <input type="submit" id="submit-btn" placeholder="Submit" />
-          </form>
-          <h1 class="current-city">Oslo</h1>
-          <h3 class="current-date">Tuesday 20.aug 13:45</h3>
+          <h1 id="current-city">Oslo</h1>
+          <h3 id="current-date">Tuesday 20.aug 13:45</h3>
           <h4>Low 18°C / High 25°C</h4>
         </div>
-        <div class="col">
-          <h2 class="weather-icon-bg">🌤️</h2>
-          <h2 class="current-temp">
-            21<span class="weather-app-unit">°C</span>
-          </h2>
+        <div class="col2">
+          <span class="weather-icon-bg">🌤️</span>
+          <div class="flex-bx">
+            <span id="current-temp">21</span>
+            <span class="weather-app-unit">°C</span>
+          </div>
         </div>
       </div>
       <div id="forcastWeek">
@@ -55,6 +62,6 @@
       <a href="x" target="_blank">open sourcesd on Github</a> and
       <a href="x" target="_blank">hosted by Netlify</a>
     </footer>
-    <script src="/src/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
