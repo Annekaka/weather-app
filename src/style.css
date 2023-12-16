@@ -2,16 +2,18 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #b1e9fa;
+  color: rgb(27, 27, 27);
 }
 #container {
   margin: 100px auto;
   padding: 2rem;
   max-width: 60%;
-  border: solid blue 2px;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 1rem;
+  background-color: #fafafa;
 }
 
 #current-weather {
@@ -29,7 +31,7 @@ ul {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
   column-gap: 2rem;
-  row-gap: 1rem;
+  row-gap: 0.6rem;
 }
 
 li.day {
@@ -42,4 +44,51 @@ li.date {
 
 li.temp {
   grid-row: 4;
+}
+footer {
+  text-align: center;
+  font-size: 1rem;
+  color: #38a5c7;
+}
+/* Text */
+h1 {
+  font-size: 3.5rem;
+  line-height: 2rem;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+h3 {
+  font-size: 1.5rem;
+  color: rgb(69, 69, 69);
+}
+li {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(69, 69, 69);
+}
+a {
+  color: #38a5c7;
+  text-decoration: none;
+}
+/*Elements*/
+button {
+  background-color: #384bc7;
+  color: #fafafa;
+  font-size: 1rem;
+  border: #384bc7 solid 1px;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.5rem 4rem 0.5rem 0.5rem;
+  border-radius: 15px;
+  border: #38a5c7 solid 1px;
+}
+
+input:focus {
+  outline: none;
 }
