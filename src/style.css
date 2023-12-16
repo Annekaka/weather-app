@@ -1,0 +1,45 @@
+/* Struckture */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#container {
+  margin: 100px auto;
+  padding: 2rem;
+  max-width: 60%;
+  border: solid blue 2px;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1rem;
+}
+
+#current-weather {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+ul {
+  margin: 1rem;
+  text-align: center;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+
+li.day {
+  grid-row: 2;
+}
+
+li.date {
+  grid-row: 3;
+}
+
+li.temp {
+  grid-row: 4;
+}
