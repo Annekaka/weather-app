@@ -12,6 +12,14 @@ function search(event) {
   axios.get(apiUrl).then(showUser);
 }
 
+function getForcast(city) {
+  let city = searchInputElement.value;
+  let apiKey = "019add0a90bedf4acb7o19723ceat3f3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showUser);
+}
+
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
@@ -52,3 +60,29 @@ function showUser(response) {
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = `${currentTemp}`;
 }
+
+function displayForcast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forcastHtml = "";
+
+  days.forEach(function (day) {
+    forcastHtml =
+      forcastHtml +
+      ` 
+    <div class="col-3">
+    <div class="weather-icon-sml">🌤️</div>
+    <div class="weather-forcast-day">${day}</div>
+    <div class="weather-forcast-date">21.aug</div>
+    <div class="weather-forcast-temp">
+      <span class="weather-forcast-temp-max">18°</span> /
+      <span class="weather-forcast-temp-min">21°</span>
+    </div>
+    </div>
+  `;
+  });
+
+  let forcastElement = document.querySelector("#forcastWeek");
+  forcastElement.innerHTML = forcastHtml;
+}
+
+displayForcast();
