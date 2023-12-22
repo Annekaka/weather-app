@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: center;
 }
-.forcastWeek {
+.forecastWeek {
   padding: 20px;
   text-align: center;
   background-color: rgb(236, 244, 255);
@@ -86,7 +86,7 @@ a {
   font-size: 1rem;
 }
 .weather-icon-sml {
-  font-size: 2.5rem;
+  width: 15px;
 }
 .search {
   color: #fafafa;

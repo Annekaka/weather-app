@@ -20,19 +20,23 @@
           <input type="submit" class="search" value="Submit" />
         </form>
         <div class="col-1">
-          <h1 id="current-city">Oslo</h1>
-          <h3 id="current-date">Tuesday 20.aug 13:45</h3>
+          <h1 id="current-city"></h1>
+          <h3 id="current-time"></h3>
           <h4>Low 18°C / High 25°C</h4>
         </div>
         <div class="col-2">
-          <span class="weather-icon-bg">🌤️</span>
+          <div class="weather-icon-bg" id="current-icon">
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+            />
+          </div>
           <div class="flex-bx">
-            <span id="current-temp">21</span>
+            <span id="current-temp"></span>
             <span class="weather-app-unit">°C</span>
           </div>
         </div>
       </div>
-      <div class="forcastWeek" id="forcastWeek"></div>
+      <div class="forecastWeek" id="forecastWeek"></div>
     </div>
     <footer>
       Coded by
