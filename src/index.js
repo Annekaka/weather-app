@@ -3,13 +3,13 @@ function refreshWeather(response) {
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#current-city");
   let timeElement = document.querySelector("#current-time");
-  let iconElement = document.querySelector("#current-icon");
+  let iconElement = document.querySelector("#icon");
   let date = new Date(response.data.time * 1000);
 
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}/>`;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon-bg"/>`;
 
   getForecast(response.data.city);
 
@@ -54,6 +54,13 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDate()];
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
@@ -64,27 +71,27 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
   let forecastHtml = "";
 
-  response.data.daily.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      ` 
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        ` 
     <div class="col-3">
-    <div class="weather-icon-sml"><img src="${day.condition.icon_url}"/></div>
-    <div class="weather-forecast-day">tue</div>
-    <div class="weather-forecast-date">21.aug</div>
+    <div><img src="${day.condition.icon_url}" class="weather-icon-sml"/></div>
+    <div class="weather-forecast-day">${formatDay(day.time)}</div>
     <div class="weather-forecast-temp">
-      <span class="weather-forecast-temp-max">${Math.round(
-        day.temperature.miximum
-      )}°</span> /
+      <span class="weather-forecast-temp-max"><strong>${Math.round(
+        day.temperature.maximum
+      )}°</strong></span> /
       <span class="weather-forecast-temp-min">${Math.round(
         day.temperature.minimum
       )}°</span>
     </div>
     </div>
   `;
+    }
   });
 
   let forecastElement = document.querySelector("#forecastWeek");
